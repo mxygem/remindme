@@ -33,7 +33,7 @@ with the latest binary version.
 There are 2 ways to build `remindme`.
 
 1. Run `make`.
-2. Run `docker build <CONTAINER_REPO_NAME>/remindme:v1.0.0 .`
+2. Run `docker build -t briandowns/remindme:v1.0.0 .`
 
 ## Contributions
 
