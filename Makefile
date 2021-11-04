@@ -9,11 +9,12 @@ LDFLAGS = -ldflags '-w -s -extldflags "-static" -X main.gitSHA=$(GIT_SHA) -X mai
 
 TAGS    = "netgo osusergo no_stage static_build"
 $(BINDIR)/$(BINARY): clean
+	$(GO) mod tidy
 	$(GO) build -tags $(TAGS) -v $(LDFLAGS) -o $@
 
 .PHONY: clean
 clean:
-	$(GO) clean
+	$(GO) clean -modcache
 	rm -f $(BINDIR)/$(BINARY)
 
 .PHONY: image
